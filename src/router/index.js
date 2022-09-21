@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import UserProfile from '../views/UserProfile.vue'
+import PageNotFound from '../views/PageNotFound.vue'
 
 Vue.use(VueRouter)
 
@@ -23,6 +24,11 @@ const routes = [
     path: '/user/:id',
     name: 'user',
     component: UserProfile
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: PageNotFound
   }
 ]
 
